@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import CheckBox from "../components/CheckBox";
 
 interface Props {
   prefectures: Element[];
@@ -24,7 +25,9 @@ const Home: React.VFC<Props> = ({ prefectures }) => {
         <h1>utsuroi app</h1>
         <div>
           {prefectures.map((prefecture) => (
-            <div key={prefecture.prefCode}>{prefecture.prefName}</div>
+            <div key={prefecture.prefCode}>
+              <CheckBox prefName={prefecture.prefName} />
+            </div>
           ))}
         </div>
       </main>
